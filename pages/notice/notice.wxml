@@ -1,0 +1,22 @@
+<!--pages/notice/notice.wxml-->
+<scroll-view scroll-y="true" style="height:100%" bindscrolltolower="loadMore" bindscroll="scroll">
+  <view class="noticeList bg-white" style="margin-top:0;">
+    <block wx:for="{{notice}}" wx:key="item.id">
+      <navigator class="noticeList-item" url="../article/article">
+        <image src="{{item.image}}" style="width:112px;height:68px;"></image>
+        <view class="noticeList-item-r">
+          <text class="noticeList-item-title">{{item.title}}</text>
+          <text class="noticeList-item-desc">{{item.desc}}</text>
+        </view>
+      </navigator>
+    </block>
+  </view>
+<import src="../../template/template.wxml"/>
+<template is="qrcode" />
+<!--   <view class="tips1">
+      <view wx:if="{{hasMore}}" style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;">
+          <icon type="waiting" size="45"/><text>玩命的加载中...</text>
+      </view>
+      <view wx:else><text>没有更多内容了</text></view>
+  </view> -->
+</scroll-view>

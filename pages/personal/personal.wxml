@@ -1,0 +1,21 @@
+<!--pages/personal/personal.wxml-->
+<view class="personalWrap">
+    <view class="personalMe" >
+        <image src="{{userHead}}" style="width:68px;height:68px;border:1px solid #ddd;float:left;margin:20rpx 20rpx;border-radius: 50%;"></image>
+        <view class="personalInfo">
+            <text>姓名: {{userName}}</text>
+            <text>电话: {{userPhone}}</text>
+        </view>
+    </view>
+    <!-- 列表 -->
+    <view class="personalList">
+        <view class="iconfont icon-reserve"  bindtap="listFirst">我的预定</view>
+        <view class="iconfont icon-about" >关于万科</view>
+        <view class="iconfont icon-edition" >版本号</view>
+        <view class="iconfont icon-password" >密码修改</view>
+        <view class="iconfont icon-feedback" style="border:none;">意见反馈</view>
+    </view>
+    <button type="default"  bindtap="defaultLogin" data-login="{{login}}" hover-class="other-button-hover"> {{operation}} </button>
+</view>
+<import src="../../template/template.wxml"/>
+<template is="qrcode" />

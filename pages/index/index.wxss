@@ -1,0 +1,32 @@
+/**index.wxss**/
+.swiper-banner{
+  height: 400rpx;
+}
+.menuWrap{
+  padding: 20rpx;
+  display: -webkit-box;
+	display: -webkit-flex;
+  display: flex;
+}
+.menuWrap-item{
+  text-align: center;
+  -webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex:1;
+}
+.menuWrap-item-navi{
+  display: inline-block;
+  width: 150rpx;
+  padding: 10rpx 0;
+  color: #b02923;
+}
+.menuWrap-item-navi span{
+  font-size: 30px;
+}
+.menuWrap-item-navi text{
+  display: block;
+  margin-top: 8px;
+}
+.icon-qrcode{
+  font-weight:bold;
+}

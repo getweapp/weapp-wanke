@@ -1,0 +1,164 @@
+/**app.wxss**/
+@import "/wxParse/wxParse.wxss";
+page{
+  background-color: #eee;
+  font-size: 12px;
+  font-family:"Helvetica Neue",Helvetica,Arial,sans-serif,"微软雅黑","宋体";
+}
+view,navigator{
+    box-sizing: border-box;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 225123 */
+  src: url('https://at.alicdn.com/t/font_vkd3bl42t0zoajor.eot');
+  src: url('https://at.alicdn.com/t/font_vkd3bl42t0zoajor.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_vkd3bl42t0zoajor.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_vkd3bl42t0zoajor.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_vkd3bl42t0zoajor.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-more:before { content: "\e6a7"; }
+
+.icon-less:before { content: "\e6a5"; }
+
+.icon-moreunfold:before { content: "\e6a6"; }
+
+.icon-account:before { content: "\e6b8"; }
+
+.icon-clock:before { content: "\e6bb"; }
+
+.icon-zuowei:before { content: "\e604"; }
+
+.icon-electronics:before { content: "\e6da"; }
+
+.icon-qrcode:before { content: "\e631"; }
+
+.icon-map:before { content: "\e715"; }
+
+.icon-mobilephone:before { content: "\e72a"; }
+
+.icon-huiyishi:before { content: "\e603"; }
+
+.icon-phone:before { content: "\e639"; }
+
+.icon-floor:before { content: "\e600"; }
+
+.icon-name:before { content: "\e714"; }
+
+.icon-seat:before { content: "\e65d"; }
+
+.icon-time:before { content: "\e88f"; }
+
+.icon-password:before { content: "\e9af"; }
+
+.icon-feedback:before { content: "\e62f"; }
+
+.icon-about:before { content: "\e67a"; }
+
+.icon-reserve:before { content: "\e716"; }
+
+.icon-edition:before { content: "\e649"; }
+
+
+
+/* 共用的小样式 */
+.bg-white{
+  background-color: #fff;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+
+/* 公告列表样式 */
+.noticeList{
+  margin-top: 20rpx;
+  padding: 0 16rpx;
+}
+.noticeList-item{
+  padding: 24rpx 6rpx 16rpx;
+  border-bottom: 1px solid #f3f3f3;
+  display: -webkit-box;
+	display: -webkit-flex;
+  display: flex;
+}
+.noticeList-item-r{
+  padding-left: 8px;
+  -webkit-box-flex: 1;
+	-webkit-flex: 1;
+	flex:1;
+  overflow: hidden;
+}
+.noticeList-item-r text{
+  display: block;
+}
+.noticeList-item-title{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  color: #393939;
+  font-size:28rpx;
+}
+.noticeList-item-desc{
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  text-overflow: -o-ellipsis-lastline;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  color: #999;
+  line-height: 1.3;
+  margin-top: 5px;
+  height: 46px;
+  font-size:26rpx;
+}
+
+.button-hover {
+    background-color: #b02923;
+}
+/** 添加自定义button点击态样式类**/
+.other-button-hover {
+    background-color: #b02923;
+    color:#fff;
+}
+button{
+    background-color: #b02923;
+    color:#fff;
+    width:80%;
+    margin-top:80px;
+
+}
+/* 二维码浮标 */
+.qrcode{
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+  color: #b02923;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 40px;
+}
+.qrcode span{
+  font-size: 30px;
+  font-weight: bold;
+}

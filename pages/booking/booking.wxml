@@ -1,0 +1,60 @@
+<!--pages/booking/booking.wxml-->
+<view class="container">
+    <view class="header">
+        <view class="header-date">
+            日期：<picker mode="date" bindchange="bindDateChange" value="{{date}}" start='{{startDate}}' end='2019-09-01'><text class="picker">{{date}}</text></picker>
+        </view>
+        <view class="header-time">
+            时间：<picker disabled="{{picker}}" bindchange="bindPickerOrder" value="{{first}}" range="{{daytime}}"><text class="picker">{{daytime[first]}}</text>
+            </picker>
+        </view>
+        <view class="header-qrcode iconfont icon-qrcode" bindtap="getScanning"></view>
+    </view>
+    <view class="feather {{region == 'seat' ? 'feather-seats' : 'feather-chosen'}}">
+        类型：<view class="feather-room">
+                 <i class="iconfont icon-huiyishi"></i>
+                 会议室
+              </view>
+              <view class="feather-seats">
+                 <i class="iconfont icon-zuowei"></i>
+                 座位
+              </view>
+        楼层：<view class="feather-floor choice">
+                 <!-- <i class="icon-arrowB"></i> -->
+                 <picker disabled="{{picker}}" bindchange="bindPickerFloor" value="{{num}}" range="{{floor}}"><text class="picker">{{floor[num]}}</text>
+            </picker>
+              </view>
+    </view>
+    <view class="region">
+        <view class="region-module region-seat" hidden="{{region != 'seat'}}">
+            <block wx:for="{{regionDataSeat.seat}}" wx:key="item.id">
+                <view class="region-title">
+                    {{item.title}}：
+                      <text>(只能单选当天座位)</text>
+                </view>
+                <view class="region-conston">
+                    <block wx:for="{{item.children}}" wx:for-item="child" wx:for-index="cIdx" wx:key="child.id">
+                        <view data-chosen="{{child.chosen}}" data-mark="{{item.id}}-{{child.id}}" class="{{ child.chosen ? 'barred' : ''}} {{userChosen == item.id+'-'+child.id ? 'chosen' : 'nochosen'}}" bindtap="chooseSeat">{{child.title}}</view>
+                    </block>
+                </view>
+            </block>
+        </view>
+        <view class="region-module region-room" hidden="{{region == 'seat'}}">
+            <view class="region-title">
+                    会议室：
+                      <text>(只能单选单天会议室)</text>
+            </view>
+            <view class="region-conston">
+                    <block wx:for="{{regionDataRoom.room}}" wx:key="item.id">
+                        <view data-chosen="{{item.chosen}}" data-mark="{{item.id}}" class="{{item.chosen ? 'barred' : ''}} {{userChosen == item.id ? 'chosen' : 'nochosen'}}" bindtap="chooseRoom">{{item.title}}</view>
+                    </block>
+            </view>
+        </view>
+
+        <view class="region-title">楼层平面图：</view>
+        <view class="drawings">
+            <image src="./../../images/ico_ditu.png"></image>
+        </view>
+    </view>
+    <button type="default" class="button-Submit" bindtap="submitBtn" data-login="{{login}}" hover-class="other-button-hover">提交预定</button>
+</view>
